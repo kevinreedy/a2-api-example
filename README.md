@@ -7,6 +7,44 @@ a2-api-example
 
 You'll need an API key. You can get this from the Automate UI or by running `chef-automate admin-token`. This script uses environment variables for configuration. The easiest way to get started is to `cp .env.example .env` and editing `.env` with your API key and Automate server hostname.
 
+## Usage
+
+After configuration, run `bundle install` to install dependencies. Example run:
+```
+$ ruby a2_api_example.rb
+Node Counts:
+{
+  "total": 1,
+  "success": 0,
+  "failure": 0,
+  "missing": 1
+}
+
+Run Counts:
+{
+  "total": 6,
+  "success": 4,
+  "failure": 2
+}
+
+Compliance Summary:
+{
+  "controls_summary": null,
+  "node_summary": null,
+  "report_summary": {
+    "stats": {
+      "nodes": "0",
+      "platforms": 0,
+      "environments": 0,
+      "profiles": 0
+    },
+    "status": "unknown",
+    "duration": 0,
+    "start_date": ""
+  }
+}
+```
+
 ## Notes
 
 The Chef Automate API isn't complete yet. Breaking changes may be introduced that breaks this (or your own) code. Use at your own risk for now!
